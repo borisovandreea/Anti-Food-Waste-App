@@ -19,7 +19,7 @@ Client (frontend)
   cd client
   npm install
   npm run dev
-- Open: http://localhost:3000
+- Open: http://localhost:5173/
 
 Notes
 - Backend uses SQLite and Sequelize. Tables are auto-created on first run.
