@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Anti Food Waste App
 
 ## Overview
