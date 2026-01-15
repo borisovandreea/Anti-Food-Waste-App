@@ -1,0 +1,770 @@
+/* =============================================
+   Anti-Food Waste App - Global Styles
+   Eco-Friendly Color Palette
+   ============================================= */
+
+/* Root color variables */
+:root {
+  --primary-green: #2E7D32;
+  --secondary-green: #4CAF50;
+  --light-green-bg: #F1F8E9;
+  --card-white: #FFFFFF;
+  --text-dark: #212121;
+  --text-light: #666666;
+  --border-light: #E0E0E0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --success-green: #66BB6A;
+  --error-red: #E53935;
+  --warning-orange: #FB8C00;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* =============================================
+   GLOBAL STYLES
+   ============================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--light-green-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* =============================================
+   CONTAINER & LAYOUT
+   ============================================= */
+
+#root {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--card-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  padding: 40px;
+  min-height: 100vh;
+}
+
+/* =============================================
+   TYPOGRAPHY
+   ============================================= */
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-green);
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--light-green-bg);
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--secondary-green);
+  margin-bottom: 10px;
+}
+
+h4, h5, h6 {
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+p {
+  color: var(--text-light);
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+a {
+  color: var(--primary-green);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--secondary-green);
+  text-decoration: underline;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+
+button {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: var(--card-white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--secondary-green);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--light-green-bg);
+  color: var(--primary-green);
+  border: 2px solid var(--primary-green);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-green);
+  color: var(--card-white);
+}
+
+button:focus {
+  outline: 2px solid var(--secondary-green);
+  outline-offset: 2px;
+}
+
+/* =============================================
+   FORMS & INPUTS
+   ============================================= */
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+input::placeholder {
+  color: var(--text-light);
+  opacity: 0.7;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Form Card Container */
+.form-card {
+  background-color: var(--light-green-bg);
+  border: 1px solid #C8E6C9;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Input Field Styling */
+.input-field {
+  padding: 12px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: var(--card-white);
+  transition: all 0.3s ease;
+  font-family: var(--font-family);
+}
+
+.input-field:hover {
+  border-color: var(--primary-green);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+  background-color: #FAFAFA;
+}
+
+.input-field::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Add Product Button */
+.btn-add {
+  background-color: var(--primary-green);
+  color: var(--card-white);
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+  min-width: 200px;
+}
+
+.btn-add:hover:not(:disabled) {
+  background-color: var(--secondary-green);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-add:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(46, 125, 50, 0.2);
+}
+
+.btn-add:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-add:focus {
+  outline: 2px solid var(--secondary-green);
+  outline-offset: 2px;
+}
+
+/* =============================================
+   CHECKBOX STYLING
+   ============================================= */
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 6px;
+  background-color: #FAFAFA;
+  border: 1px solid #E8F5E9;
+}
+
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  cursor: pointer;
+  accent-color: var(--primary-green);
+  margin: 0;
+}
+
+.checkbox-input:focus {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 2px;
+}
+
+.checkbox-label {
+  margin: 0;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-dark);
+  user-select: none;
+}
+
+/* =============================================
+   CLAIM BUTTON STYLING
+   ============================================= */
+
+.btn-claim {
+  background-color: var(--secondary-green);
+  color: var(--card-white);
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.btn-claim:hover {
+  background-color: var(--primary-green);
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-claim:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(46, 125, 50, 0.15);
+}
+
+.btn-claim:focus {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 2px;
+}
+
+/* =============================================
+   CARDS & SECTIONS
+   ============================================= */
+
+.card {
+  background-color: var(--card-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--light-green-bg);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.card-content {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* =============================================
+   GRID LAYOUTS
+   ============================================= */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-item {
+  background-color: var(--card-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px var(--shadow-color);
+}
+
+.grid-item-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: var(--light-green-bg);
+}
+
+.grid-item-content {
+  padding: 15px;
+}
+
+/* =============================================
+   MESSAGES & ALERTS
+   ============================================= */
+
+.alert {
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border-left: 4px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert-success {
+  background-color: #C8E6C9;
+  border-left-color: var(--success-green);
+  color: #1B5E20;
+}
+
+.alert-error {
+  background-color: #FFCDD2;
+  border-left-color: var(--error-red);
+  color: #B71C1C;
+}
+
+.alert-warning {
+  background-color: #FFE0B2;
+  border-left-color: var(--warning-orange);
+  color: #E65100;
+}
+
+.alert-info {
+  background-color: #E1F5FE;
+  border-left-color: #01579B;
+  color: #01579B;
+}
+
+/* =============================================
+   LOADING & SPINNER
+   ============================================= */
+
+.loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-light);
+  font-size: 16px;
+}
+
+.spinner {
+  border: 4px solid var(--light-green-bg);
+  border-top: 4px solid var(--primary-green);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* =============================================
+   NAVIGATION
+   ============================================= */
+
+nav {
+  background-color: var(--primary-green);
+  padding: 0;
+  margin: -40px -40px 30px -40px;
+  border-radius: 12px 12px 0 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav li {
+  flex: 1;
+  min-width: 120px;
+}
+
+nav a {
+  display: block;
+  color: var(--card-white);
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--secondary-green);
+  border-bottom-color: var(--card-white);
+  text-decoration: none;
+}
+
+nav a.active {
+  border-bottom-color: var(--card-white);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* =============================================
+   TABLES
+   ============================================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 14px;
+  background-color: var(--card-white);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Table Header */
+table th {
+  background-color: var(--primary-green);
+  color: var(--card-white);
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 13px;
+  border-bottom: 2px solid var(--secondary-green);
+}
+
+/* Table Data Cells */
+table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-dark);
+}
+
+/* Zebra Striping - Alternate row colors */
+table tbody tr:nth-child(odd) {
+  background-color: var(--card-white);
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #F9F9F9;
+}
+
+/* Hover Effect on Rows */
+table tbody tr:hover {
+  background-color: #F0F7EE;
+  transition: background-color 0.2s ease;
+}
+
+/* Remove border from last row */
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =============================================
+   UTILITY CLASSES
+   ============================================= */
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+/* =============================================
+   RESPONSIVE DESIGN
+   ============================================= */
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  nav {
+    margin: -20px -20px 20px -20px;
+  }
+
+  nav a {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 10px;
+  }
+
+  .app-container {
+    padding: 15px;
+    border-radius: 8px;
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  .flex,
+  .flex-center {
+    flex-direction: column;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* =============================================
+   ACCESSIBILITY
+   ============================================= */
+
+:focus-visible {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* =============================================
+   PRINT STYLES
+   ============================================= */
+
+@media print {
+  body {
+    background-color: white;
+  }
+
+  .app-container {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  button,
+  nav {
+    display: none;
+  }
+}

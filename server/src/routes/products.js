@@ -49,6 +49,43 @@ router.patch('/:id/share', async (req, res, next) => {
   } catch (err) { next(err); }
 });
 
+/**
+ * PATCH /api/products/:id
+ * Updates a product's claimedBy field to mark it as claimed
+ * Accepts claimedBy in request body (defaults to "Student User" if not provided)
+ * Returns the updated product as JSON
+ */
+router.patch('/:id', async (req, res, next) => {
+  try {
+    console.log(`📝 DEBUG: PATCH request for product ID ${req.params.id}`);
+    console.log(`📝 DEBUG: Request body:`, req.body);
+
+    // Find the product by ID
+    const productToUpdate = await Product.findByPk(req.params.id);
+
+    // Check if product exists
+    if (!productToUpdate) {
+      console.warn(`⚠️ DEBUG: Product ID ${req.params.id} not found`);
+      return res.status(404).json({ error: 'Product not found' });
+    }
+
+    // Extract claimedBy from request body, default to "Student User"
+    const claimedByValue = req.body.claimedBy || 'Student User';
+
+    // Update the product's claimedBy field
+    productToUpdate.claimedBy = claimedByValue;
+    await productToUpdate.save();
+
+    console.log(`✅ DEBUG: Product ID ${req.params.id} successfully updated with claimedBy: "${claimedByValue}"`);
+
+    // Return the updated product
+    res.json(productToUpdate);
+  } catch (databaseError) {
+    console.error(`❌ DEBUG: Error updating product ID ${req.params.id}:`, databaseError);
+    next(databaseError);
+  }
+});
+
 // POST /api/products/:id/claim
 router.post('/:id/claim', async (req, res, next) => {
   try {
