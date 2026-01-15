@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Anti Food Waste App – Specifications and Project Plan
 
 ## 1. General Objective
@@ -280,4 +279,4 @@ React SPA (frontend) <--> Node.js REST API (backend) <--> Relational Database vi
 - Integrated, tested  
 - Optional deployment  
 - README.md with instructions  
->>>>>>> 4fed71db87331d48815e0b27fb95778544da9200
+
